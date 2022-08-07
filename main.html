@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>DFW Tracking</title>
+</head>
+<script type = "text/javascript" src="main.js"></script>
+<body onload="loadFromStorage()">
+    <div class="container-fluid">
+        <h1>Dry fighting weight tracker</h1>
+        <a href="https://www.strongfirst.com/dry-fighting-weight/">StrongFirst article</a>
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Day 1
+                    </td>
+                    <td>
+                        <label>Ladders 1, 2, 3</label>
+                        <br/>
+                        <input type="number" id="press_w1d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w1d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Ladders 1, 2, 3</label>
+                        <br/>
+                        <input type="number" id="press_w2d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w2d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Ladders 1, 2, 3, 4</label>
+                        <br/>
+                        <input type="number" id="press_w3d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w3d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Ladders 1, 2, 3, 4, (5)</label>
+                        <br/>
+                        <input type="number" id="press_w4d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w4d1" placeholder="Squat" class="form-control"/>
+                    </td>
+                    <td>
+                        <label>Perform 3x3</label>
+                        <br/>
+                        <input type="number" id="press_w5d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w5d1" placeholder="Squat" class="form-control"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Day 2
+                    </td>
+                    <td>
+                        <label>Sets of 1</label>
+                        <br/>
+                        <input type="number" id="press_w1d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w1d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Sets of 1</label>
+                        <br/>
+                        <input type="number" id="press_w2d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w2d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Sets of 2</label>
+                        <br/>
+                        <input type="number" id="press_w3d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w3d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Sets of 2</label>
+                        <br/>
+                        <input type="number" id="press_w4d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w4d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Test new RM</label>
+                        <br/>
+                        <input type="number" id="press_w5d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w5d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Day 3
+                    </td>
+                    <td>
+                        <label>Sets of 2</label>
+                        <br/>
+                        <input type="number" id="press_w1d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w1d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Sets of 3</label>
+                        <br/>
+                        <input type="number" id="press_w2d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w2d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Sets of 3</label>
+                        <br/>
+                        <input type="number" id="press_w3d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w3d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td>
+                        <label>Alternate between sets of 3 and 4 if possible.</label>
+                        <br/>
+                        <input type="number" id="press_w4d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
+                        <input type="number" id="squat_w4d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-danger" onclick="resetAll()">Reset</button>
+    </div>
+    
+</body>
+</html> 
