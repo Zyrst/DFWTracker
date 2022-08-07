@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open main.html",
-            "file": "main.html"
+            "name": "Open index.html",
+            "file": "index.html"
         }
     ]
 }
