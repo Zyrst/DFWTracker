@@ -10,6 +10,7 @@
     <div class="container-fluid">
         <h1>Dry fighting weight tracker</h1>
         <a href="https://www.strongfirst.com/dry-fighting-weight/">StrongFirst article</a>
+        <a href="https://www.youtube.com/watch?v=Xk24DMOInnQ" style="padding-left: 30px;">30 min timer</a>
         <table class="table table-striped-columns">
             <thead>
                 <tr>
@@ -29,32 +30,32 @@
                     <td>
                         <label>Ladders 1, 2, 3</label>
                         <br/>
-                        <input type="number" id="press_w1d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w1d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w1d1"/>
+                        <squat-b id="squat_w1d1"/>
                     </td>
                     <td>
                         <label>Ladders 1, 2, 3</label>
                         <br/>
-                        <input type="number" id="press_w2d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w2d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w2d1"/>
+                        <squat-b id="squat_w2d1"/>
                     </td>
                     <td>
                         <label>Ladders 1, 2, 3, 4</label>
                         <br/>
-                        <input type="number" id="press_w3d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w3d1" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w3d1"/>
+                        <squat-b id="squat_w3d1" />
                     </td>
                     <td>
                         <label>Ladders 1, 2, 3, 4, (5)</label>
                         <br/>
-                        <input type="number" id="press_w4d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w4d1" placeholder="Squat" class="form-control"/>
+                        <clean-press id="press_w4d1"/>
+                        <squat-b id="squat_w4d1" />
                     </td>
                     <td>
                         <label>Perform 3x3</label>
                         <br/>
-                        <input type="number" id="press_w5d1" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w5d1" placeholder="Squat" class="form-control"/>
+                        <clean-press id="press_w5d1"/>
+                        <squat-b id="squat_w5d1"/>
                     </td>
                 </tr>
                 <tr>
@@ -64,32 +65,32 @@
                     <td>
                         <label>Sets of 1</label>
                         <br/>
-                        <input type="number" id="press_w1d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w1d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w1d2" />
+                        <squat-b id="squat_w1d2" />
                     </td>
                     <td>
                         <label>Sets of 1</label>
                         <br/>
-                        <input type="number" id="press_w2d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w2d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w2d2"/>
+                        <squat-b id="squat_w2d2"/>
                     </td>
                     <td>
                         <label>Sets of 2</label>
                         <br/>
-                        <input type="number" id="press_w3d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w3d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w3d2" />
+                        <squat-b id="squat_w3d2" />
                     </td>
                     <td>
                         <label>Sets of 2</label>
                         <br/>
-                        <input type="number" id="press_w4d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w4d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w4d2" />
+                        <squat-b id="squat_w4d2"/>
                     </td>
                     <td>
                         <label>Test new RM</label>
                         <br/>
-                        <input type="number" id="press_w5d2" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w5d2" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w5d2" />
+                        <squat-b id="squat_w5d2" />
                     </td>
                 </tr>
                 <tr>
@@ -99,26 +100,26 @@
                     <td>
                         <label>Sets of 2</label>
                         <br/>
-                        <input type="number" id="press_w1d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w1d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w1d3" />
+                        <squat-b id="squat_w1d3" />
                     </td>
                     <td>
                         <label>Sets of 3</label>
                         <br/>
-                        <input type="number" id="press_w2d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w2d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w2d3" />
+                        <squat-b id="squat_w2d3" />
                     </td>
                     <td>
                         <label>Sets of 3</label>
                         <br/>
-                        <input type="number" id="press_w3d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w3d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w3d3" />
+                        <squat-b id="squat_w3d3" />
                     </td>
                     <td>
                         <label>Alternate between sets of 3 and 4 if possible.</label>
                         <br/>
-                        <input type="number" id="press_w4d3" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-                        <input type="number" id="squat_w4d3" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+                        <clean-press id="press_w4d3" />
+                        <squat-b id="squat_w4d3" />
                     </td>
                     <td></td>
                 </tr>
