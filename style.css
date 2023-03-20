@@ -1,0 +1,7 @@
+body{ min-height: 100vh; margin:0; }
+
+footer{ min-height:32px; }
+
+body{ display:flex; flex-direction:column; }
+article{ flex:1; }
+
