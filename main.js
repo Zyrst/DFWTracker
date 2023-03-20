@@ -32,6 +32,15 @@ class Squat extends HTMLElement {
     }
 }
 
+class Weight extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <input type="number" id="${this.id}" class="form-control" style="width: 100px; margin-left: 30px; display: inline;" onchange="persist(this)"/>
+        `
+    }
+}
+
 
 customElements.define('clean-press', CleanAndPress);
 customElements.define('squat-b', Squat);
+customElements.define("kb-weight", Weight)

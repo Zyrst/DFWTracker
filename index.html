@@ -11,7 +11,12 @@
         <h1>Dry fighting weight tracker</h1>
         <a href="https://www.strongfirst.com/dry-fighting-weight/">StrongFirst article</a>
         <a href="https://www.youtube.com/watch?v=Xk24DMOInnQ" style="padding-left: 30px;">30 min timer</a>
-        <table class="table table-striped-columns">
+        <div style="display: inline;">
+            <label style="padding-left: 30px;">Weight(s) used</label>
+            <kb-weight id="weight1"/>
+            <kb-weight id="weight2" />
+        </div>
+        <table class="table table-striped-columns" style="margin-top: 10px;">
             <thead>
                 <tr>
                     <th>Day</th>
@@ -125,6 +130,7 @@
                 </tr>
             </tbody>
         </table>
+ 
         <button type="button" class="btn btn-danger" onclick="resetAll()">Reset</button>
     </div>
     
