@@ -16,6 +16,35 @@ function persist(event){
     localStorage.setItem(event.id, event.value);
 }
 
+function saveMyProgram(nameOfCompleted){
+    console.log(nameOfCompleted)
+    vals = []
+    skip_vals = ["weight1", "weight2"]
+    weights = []
+    document.querySelectorAll("input").forEach((inputEl) => {
+        if (!skip_vals.includes(inputEl.id)){
+            value = localStorage.getItem(inputEl.id);
+            vals.push(value);
+        }
+        else{
+            weights.push(localStorage.getItem(inputEl.id));
+        }
+       
+    });
+    
+    vals = vals.map(value => value == null ? "" : value);
+    console.log(vals)
+    
+
+    hist_storage = localStorage.getItem("history")
+    hist = hist_storage == null ? {} : JSON.parse(hist_storage) 
+
+    hist[nameOfCompleted] = {"Weights": weights.toString(), "Reps": vals.toString()}
+    localStorage.setItem("history", JSON.stringify(hist))
+    resetAll()
+    $("#completeModal").modal("hide")
+}
+
 class CleanAndPress extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
