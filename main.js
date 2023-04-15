@@ -23,10 +23,13 @@ function saveMyProgram(nameOfCompleted){
     weights = []
     document.querySelectorAll("input").forEach((inputEl) => {
         if (!skip_vals.includes(inputEl.id)){
-            value = localStorage.getItem(inputEl.id);
-            vals.push(value);
+            console.log(inputEl.id)
+            if (inputEl.id != "name"){
+                value = localStorage.getItem(inputEl.id);
+                vals.push(value);
+            }
         }
-        else{
+        else {
             weights.push(localStorage.getItem(inputEl.id));
         }
        
@@ -45,18 +48,44 @@ function saveMyProgram(nameOfCompleted){
     $("#completeModal").modal("hide")
 }
 
+function loadGraph(){
+    TESTER = document.getElementById("historic_graph");
+    
+    hist_storage = localStorage.getItem("history")
+    hist = hist_storage == null ? {} : JSON.parse(hist_storage)
+    if (Object.keys(hist).length == 0)
+        return;
+
+    plotting = []
+    for(const [key, val] of Object.entries(hist)){
+        console.log(key, val);
+        reps = val["Reps"].split(",")
+        push_reps = []
+        for (var i = 0; i < reps.length; i++){
+            as_int = parseInt(reps[i])
+            if (isNaN(as_int))
+                as_int = 0
+                push_reps.push(as_int)
+            
+        }
+        plotting.push({
+            y: push_reps,
+            mode: 'lines+markers',
+            name: key + " push"
+        })
+
+    }
+    layout = {
+        title: "History"
+    }
+
+    Plotly.newPlot(TESTER, plotting, layout);
+}
+
 class CleanAndPress extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <input type="number" id="${this.id}" placeholder="Clean & Press" class="form-control" onchange="persist(this)"/>
-        `
-    }
-}
-
-class Squat extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <input type="number" id="${this.id}" placeholder="Squat" class="form-control" onchange="persist(this)"/>
+        <input type="number" tabindex="${this.order}" id="${this.id}" placeholder="Total rep" class="form-control" onchange="persist(this)"/>
         `
     }
 }
@@ -71,5 +100,4 @@ class Weight extends HTMLElement {
 
 
 customElements.define('clean-press', CleanAndPress);
-customElements.define('squat-b', Squat);
 customElements.define("kb-weight", Weight)
