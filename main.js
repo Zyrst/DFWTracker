@@ -16,8 +16,7 @@ function persist(event){
     localStorage.setItem(event.id, event.value);
 }
 
-function saveMyProgram(nameOfCompleted){
-    console.log(nameOfCompleted)
+function getCurrentReps(){
     vals = []
     skip_vals = ["weight1", "weight2"]
     weights = []
@@ -36,6 +35,15 @@ function saveMyProgram(nameOfCompleted){
     });
     
     vals = vals.map(value => value == null ? "" : value);
+
+    return [vals, weights]
+}
+
+function saveMyProgram(nameOfCompleted){
+    
+    return_items = getCurrentReps()
+    vals = return_items[0]
+    weights = return_items[1]
     console.log(vals)
     
 
@@ -71,13 +79,17 @@ function loadGraph(){
         plotting.push({
             y: push_reps,
             mode: 'lines+markers',
-            name: key + " push"
+            name: key
         })
 
     }
     layout = {
         title: "History"
     }
+
+    current_reps = getCurrentReps()
+    vals = current_reps[0]
+    plotting.push({y: vals, mode: 'lines+markers', name: "Current"})
 
     Plotly.newPlot(TESTER, plotting, layout);
 }
